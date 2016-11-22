@@ -1,2 +1,4 @@
 init
+initramfs/
+initramfs.img
 *.o
