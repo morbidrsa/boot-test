@@ -11,8 +11,8 @@ initramfs:  $(NAME)
 	install -m 755 /lib64/$(shell ldd init | grep -o -E "ld-linux-x86-64.so.[0-9]+") initramfs/lib64/
 	cd initramfs && find . | cpio -H newc -o | gzip > ../initramfs.img
 
-$(NAME): init.c
-	$(CC) $(CFLAGS) $^ -o $@
+$(NAME): init.c boot-test.h test.c
+	$(CC) $(CFLAGS) $? -o $@
 
 clean:
 	rm -f $(NAME) *.o initramfs.*

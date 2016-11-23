@@ -5,12 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-enum test_result { TEST_PASS, TEST_FAIL };
-
-enum test_result do_test(void)
-{
-	return TEST_PASS;
-}
+#include "boot-test.h"
 
 int main(void)
 {
